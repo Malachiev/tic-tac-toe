@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100%;
+  min-height: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+
+  background-color: rgb(78, 70, 70);
+}
+
+.content_container {
+  width: 1160px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
