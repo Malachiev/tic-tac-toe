@@ -1,15 +1,14 @@
 .wrapper {
   width: 100%;
-  min-height: 80px;
+  height: 80px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  position: absolute;
   bottom: 0;
 
-  background-color: rgb(78, 70, 70);
+  background-color: black;
 }
 
 .content_container {
@@ -18,4 +17,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button {
+  margin-top: 5px;
+  cursor: pointer;
+
+  background-color: aqua;
+  border: 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: rgb(58, 182, 182);
 }

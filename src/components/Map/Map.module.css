@@ -1,0 +1,44 @@
+.map {
+  width: 300px;
+  height: 300px;
+
+  border: 2px solid #03e9f4;
+  margin: auto;
+
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #03e9f4;
+  float: left;
+  box-sizing: border-box;
+  color: #03e9f4;
+
+  cursor: pointer;
+}
+
+.path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+
+  margin: auto;
+}
+
+@media (max-width: 320px) {
+  .map {
+    width: 210px;
+    height: 210px;
+  }
+
+  .square {
+    width: 70px;
+    height: 70px;
+  }
+}

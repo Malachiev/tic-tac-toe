@@ -1,0 +1,32 @@
+.checkbox {
+  position: relative;
+  display: block;
+  width: 120px;
+  height: 40px;
+  overflow: hidden;
+
+  color: #03e9f4;
+}
+
+.check {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.label span {
+  position: absolute;
+  margin-top: 15px;
+}
+
+.path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: 0.5s all;
+}
+
+.check:checked + label svg g path {
+  stroke-dashoffset: 0;
+}
