@@ -2,6 +2,7 @@ import s from "./Map.module.css";
 import mapStore from "../../store/use-map-store";
 import playersStore from "../../store/use-players-store";
 import winnerStore from "../../store/use-winner-store";
+import cancelMoveStore from "../../store/use-cancel-move-store";
 
 const winningСombination = [
   [0, 1, 2],
@@ -54,6 +55,7 @@ export const Map: React.FC = () => {
   const { squares, step, setStep, setSquares } = mapStore();
   const { player_1, player_2 } = playersStore();
   const { winner, setWinner } = winnerStore();
+  const { setMoveHistory, moveHistory } = cancelMoveStore();
 
   const isWinner = () => {
     let symbol = step % 2 === 0 ? cross : circle;
@@ -73,11 +75,14 @@ export const Map: React.FC = () => {
       }
     }
     if (step === 8 && winner === "") {
-      setTimeout(() => setWinner("дружба"), 400);
+      setWinner("дружба");
     }
   };
 
   const clickHandler = (selectedSquare: number) => {
+    moveHistory.push(selectedSquare);
+    const arrayMoves = moveHistory;
+    setMoveHistory(arrayMoves);
     let currentSquares = squares;
     if (currentSquares[selectedSquare] === null && !winner) {
       currentSquares[selectedSquare] = step % 2 === 0 ? cross : circle;

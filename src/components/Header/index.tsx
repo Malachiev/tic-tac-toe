@@ -2,11 +2,13 @@ import s from "./Header.module.css";
 import playersStore from "../../store/use-players-store";
 import winnerStore from "../../store/use-winner-store";
 import mapStore from "../../store/use-map-store";
+import cancelMoveStore from "../../store/use-cancel-move-store";
 
 export const Header: React.FC = () => {
   const { player_1, setPlayer_1, player_2, setPlayer_2 } = playersStore();
   const { winner, setWinner } = winnerStore();
   const { setStep, setSquares } = mapStore();
+  const { setMoveHistory } = cancelMoveStore();
 
   const newGame = () => {
     switch (winner) {
@@ -21,6 +23,7 @@ export const Header: React.FC = () => {
         break;
     }
     setWinner("");
+    setMoveHistory([]);
     setSquares(Array(9).fill(null));
     setStep(0);
   };

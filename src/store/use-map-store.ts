@@ -5,8 +5,8 @@ interface mapState {
   step: number;
   setStep: (step: number) => void;
 
-  squares: Array<string | ReactNode>;
-  setSquares: (squares: Array<string | ReactNode>) => void;
+  squares: Array<string | ReactNode | null>;
+  setSquares: (squares: Array<string | ReactNode | null>) => void;
 
   tableSize?: number;
   setTableSize: (tableSize: number) => void;

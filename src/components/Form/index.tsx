@@ -2,10 +2,7 @@ import s from "./Form.module.css";
 import CheckBox from "../CheckBox";
 import { useForm } from "react-hook-form";
 import playersStore from "../../store/use-players-store";
-
-type Props = {
-  setVisibleModal: Function;
-};
+import modalFormStore from "../../store/use-modal-form-store";
 
 type FormData = {
   player_1_name?: string;
@@ -13,8 +10,9 @@ type FormData = {
   checkbox: string;
 };
 
-export const Form: React.FC<Props> = ({ setVisibleModal }) => {
+export const Form: React.FC = () => {
   const { player_1, setPlayer_1, player_2, setPlayer_2 } = playersStore();
+  const { setVisibleModal } = modalFormStore();
   const { register, handleSubmit } = useForm({
     defaultValues: {
       player_1_name: "",

@@ -7,11 +7,11 @@ import Form from "../Form";
 import modalFormStore from "../../store/use-modal-form-store";
 
 function Home() {
-  const { visibleModal, setVisibleModal } = modalFormStore();
+  const { visibleModal } = modalFormStore();
 
   return (
     <section className={s.wrapper}>
-      {visibleModal && <Form setVisibleModal={setVisibleModal} />}
+      {visibleModal && <Form />}
       {!visibleModal && <Header />}
       <Main />
       {!visibleModal && <Footer />}
