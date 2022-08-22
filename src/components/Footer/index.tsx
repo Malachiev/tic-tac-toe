@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
   return (
     <section className={s.wrapper}>
       <section className={s.game_settings}>
-        {!winner && (
+        {!winner && step && (
           <button
             className={s.button}
             onClick={() => {

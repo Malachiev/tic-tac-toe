@@ -60,6 +60,7 @@ export const Map: React.FC = () => {
   const isWinner = () => {
     let symbol = step % 2 === 0 ? cross : circle;
 
+    let winner = "";
     for (let i = 0; i < 8; i++) {
       let row = winningСombination[i];
       if (
@@ -67,16 +68,17 @@ export const Map: React.FC = () => {
         squares[row[1]] === symbol &&
         squares[row[2]] === symbol
       ) {
-        setWinner(
-          player_1.symbol === "X" && symbol === cross
+        winner =
+          (player_1.symbol === "X" && symbol === cross) ||
+          (player_1.symbol === "O" && symbol === circle)
             ? player_1.name
-            : player_2.name
-        );
+            : player_2.name;
       }
     }
-    if (step === 8 && winner === "") {
-      setWinner("дружба");
+    if (step === 8 && !winner) {
+      winner = "дружба";
     }
+    setWinner(winner);
   };
 
   const clickHandler = (selectedSquare: number) => {
