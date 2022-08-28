@@ -90,9 +90,8 @@ export const Map: React.FC = () => {
       currentSquares[selectedSquare] = step % 2 === 0 ? cross : circle;
       setStep(step + 1);
       setSquares(currentSquares);
+      isWinner();
     }
-
-    isWinner();
   };
 
   return (
